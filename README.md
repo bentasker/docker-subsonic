@@ -1,18 +1,19 @@
-# debian-subsonic
+# Subsonic
 
-This repository contains configuration files for building a Docker (http://docker.io) image for the [Subsonic][subsonic] media streamer.
+A Dockerfile for the [Subsonic][subsonic] media streamer.
 
-## Noteworthy
+## Subsonic
 
-* Subsonic 5.2.1 ([http://www.subsonic.org][subsonic])
-* Debian/wheezy
+**Susonic v5.2.1**.
+
+Subsonic is a personal media streamer. Listen to your music from anywhere – all you need is a browser.
 
 ## Usage
 
 ### Using bind-mount
 
 ```shell
-$ sudo docker run -d -p 4040:4040 --name subsonic -v /path-to-your-music/:/var/music:ro mschuerig/debian-subsonic
+$ sudo docker run -d -p 4040:4040 --name subsonic -v /path-to-your-music/:/var/music:ro hyzual/subsonic
 ```
 
 ### Using data-only containers (recommended)
@@ -68,24 +69,17 @@ Please replace `<your-username>` and `<your-email>`, `/path-to-subsonic-data/` a
 6. Run Subsonic using our two data-only containers. As long as they are present, you can remove the Subsonic container, your configuration and music will stay thanks to the data-only containers.
 
 	```shell
-	$ sudo docker run -d -p 4040:4040 --name subsonic --volumes-from subsonicdata --volumes-from musicdata mschuerig/debian-subsonic
+	$ sudo docker run -d -p 4040:4040 --name subsonic --volumes-from subsonicdata --volumes-from musicdata hyzual/subsonic
 	```
 
-## Build your own image
+## Volumes
 
-```shell
-$ sudo docker build -t <your-name>/debian-subsonic debian-subsonic
-```
+### /var/subsonic
 
-## Get a pre-built image
+## Ports
 
-A current image is available as a trusted build from the Docker index:
+### 4040
 
-```shell
-$ sudo docker pull  mschuerig/debian-subsonic
-```
-
-The repository page is at
-https://index.docker.io/u/mschuerig/debian-subsonic/
+Subsonic webserver port.
 
 [subsonic]: http://www.subsonic.org

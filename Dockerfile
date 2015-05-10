@@ -1,12 +1,10 @@
 FROM debian:wheezy
-
-MAINTAINER michael@schuerig.de
+MAINTAINER Hyzual "Hyzual@gmail.com"
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     apt-get update && \
-    apt-get dist-upgrade --yes --no-install-recommends --no-install-suggests && \
     apt-get install --yes --no-install-recommends --no-install-suggests openjdk-7-jre-headless locales && \
     apt-get clean
 

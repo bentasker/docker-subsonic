@@ -4,7 +4,7 @@ A Dockerfile for the [Subsonic][subsonic] media streamer.
 
 ## Subsonic
 
-**Susonic v5.2.1**.
+**Susonic v5.3**.
 
 Subsonic is a personal media streamer. Listen to your music from anywhere – all you need is a browser.
 

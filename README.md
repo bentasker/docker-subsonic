@@ -25,9 +25,9 @@ Consider using [Jamstash][jamstash] with your Subsonic container. Jamstash is a 
     $ sudo docker volume create --name subsonic-music
     ```
 
-    Note: you can see the list of all your volumes with this command: `sudo docker volume ls`
+    _Note_: you can see the list of all your volumes with this command: `sudo docker volume ls`
 
-2. _(optionnal)_ Import your existing Subsonic configuration and your music into the named volumes.
+2. _(optional)_ Import your existing Subsonic configuration and your music into the named volumes.
 
     Be sure to stop Subsonic first. Replace `/path_to_subsonic_data/` and `/path_to_your_music/` in the commands below.
 
@@ -40,6 +40,7 @@ Consider using [Jamstash][jamstash] with your Subsonic container. Jamstash is a 
     $ cp -r /hostdata/subsonic/* /var/subsonic
     $ exit
     ```
+
     To copy your music, the commands are the same, only the volume changes:
 
     ```shell
